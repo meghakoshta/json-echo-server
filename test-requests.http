@@ -1,0 +1,35 @@
+### Health Check
+GET http://localhost:3000/health
+
+### Valid JSON Echo
+POST http://localhost:3000/echo
+Content-Type: application/json
+
+{
+  "test": "data",
+  "number": 123,
+  "nested": {
+    "value": true
+  }
+}
+
+### Missing Content-Type (Should fail with 415)
+POST http://localhost:3000/echo
+
+{
+  "test": "data"
+}
+
+### Invalid JSON (Should fail with 400)
+POST http://localhost:3000/echo
+Content-Type: application/json
+
+{invalid json}
+
+### Large Payload Test (Adjust size as needed)
+POST http://localhost:3000/echo
+Content-Type: application/json
+
+{
+  "data": "Add large data here to test 15MB limit"
+}

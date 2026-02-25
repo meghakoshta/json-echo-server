@@ -1,0 +1,12 @@
+{
+  "name": "json-echo-server",
+  "version": "1.0.0",
+  "description": "Simple JSON echo server with validation",
+  "main": "echo-server.js",
+  "scripts": {
+    "start": "node echo-server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
